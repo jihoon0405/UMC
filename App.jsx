@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import './App.css';
+import Modal from './components/Modal';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [modalVisible, setModalVisible] = useState(false);
 
   return (
     <div className="app">
-      <h2 id="number">{count}</h2>
-      <div>
-        <button id="increase" onClick={() => setCount(count + 1)}>+1</button>
-        <button id="decrease" onClick={() => setCount(count - 1)}>-1</button>
-      </div>
+      <h1>안녕하세요!</h1>
+      <p>내용내용내용</p>
+      <button onClick={() => setModalVisible(true)}>버튼 열기</button>
+      {modalVisible && <Modal onClose={() => setModalVisible(false)} />}
     </div>
   );
 }
